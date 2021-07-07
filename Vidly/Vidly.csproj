@@ -153,8 +153,49 @@
     <Compile Include="Migrations\202107071812587_ApplyAnnotationsToCustomerNameTable.designer.cs">
       <DependentUpon>202107071812587_ApplyAnnotationsToCustomerNameTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107071835570_AddNameColumnToMembershipTypeTable.cs" />
+    <Compile Include="Migrations\202107071835570_AddNameColumnToMembershipTypeTable.designer.cs">
+      <DependentUpon>202107071835570_AddNameColumnToMembershipTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071837200_PopulateMembershipTableWithName.cs" />
+    <Compile Include="Migrations\202107071837200_PopulateMembershipTableWithName.designer.cs">
+      <DependentUpon>202107071837200_PopulateMembershipTableWithName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071846125_AddBirthDateColumnToCustomerTable.cs" />
+    <Compile Include="Migrations\202107071846125_AddBirthDateColumnToCustomerTable.designer.cs">
+      <DependentUpon>202107071846125_AddBirthDateColumnToCustomerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071902535_AddGenreColumnToMovieTable.cs" />
+    <Compile Include="Migrations\202107071902535_AddGenreColumnToMovieTable.designer.cs">
+      <DependentUpon>202107071902535_AddGenreColumnToMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071904408_AddReleaseDateColumnToMoviesTable.cs" />
+    <Compile Include="Migrations\202107071904408_AddReleaseDateColumnToMoviesTable.designer.cs">
+      <DependentUpon>202107071904408_AddReleaseDateColumnToMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071905250_AddDateAddedColumnToMoviesTable.cs" />
+    <Compile Include="Migrations\202107071905250_AddDateAddedColumnToMoviesTable.designer.cs">
+      <DependentUpon>202107071905250_AddDateAddedColumnToMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071906115_AddNumberInStockColumnToMoviesTable.cs" />
+    <Compile Include="Migrations\202107071906115_AddNumberInStockColumnToMoviesTable.designer.cs">
+      <DependentUpon>202107071906115_AddNumberInStockColumnToMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071913013_AddGenresTable.cs" />
+    <Compile Include="Migrations\202107071913013_AddGenresTable.designer.cs">
+      <DependentUpon>202107071913013_AddGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107071914539_ChangedTypeofColumnGenreInMoviesTable.cs" />
+    <Compile Include="Migrations\202107071914539_ChangedTypeofColumnGenreInMoviesTable.designer.cs">
+      <DependentUpon>202107071914539_ChangedTypeofColumnGenreInMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107072150572_PopulateGenresTable.cs" />
+    <Compile Include="Migrations\202107072150572_PopulateGenresTable.designer.cs">
+      <DependentUpon>202107072150572_PopulateGenresTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MyDbContext.cs" />
@@ -202,6 +243,8 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -237,6 +280,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107071812587_ApplyAnnotationsToCustomerNameTable.resx">
       <DependentUpon>202107071812587_ApplyAnnotationsToCustomerNameTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071835570_AddNameColumnToMembershipTypeTable.resx">
+      <DependentUpon>202107071835570_AddNameColumnToMembershipTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071837200_PopulateMembershipTableWithName.resx">
+      <DependentUpon>202107071837200_PopulateMembershipTableWithName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071846125_AddBirthDateColumnToCustomerTable.resx">
+      <DependentUpon>202107071846125_AddBirthDateColumnToCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071902535_AddGenreColumnToMovieTable.resx">
+      <DependentUpon>202107071902535_AddGenreColumnToMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071904408_AddReleaseDateColumnToMoviesTable.resx">
+      <DependentUpon>202107071904408_AddReleaseDateColumnToMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071905250_AddDateAddedColumnToMoviesTable.resx">
+      <DependentUpon>202107071905250_AddDateAddedColumnToMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071906115_AddNumberInStockColumnToMoviesTable.resx">
+      <DependentUpon>202107071906115_AddNumberInStockColumnToMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071913013_AddGenresTable.resx">
+      <DependentUpon>202107071913013_AddGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107071914539_ChangedTypeofColumnGenreInMoviesTable.resx">
+      <DependentUpon>202107071914539_ChangedTypeofColumnGenreInMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107072150572_PopulateGenresTable.resx">
+      <DependentUpon>202107072150572_PopulateGenresTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
