@@ -19,6 +19,12 @@ namespace Vidly.Controllers
         {
             _context = new MyDbContext();
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Movies
         public ActionResult Random()
         {
@@ -71,6 +77,46 @@ namespace Vidly.Controllers
 
 
             return View(movie);
+        }
+
+        // movies
+        public ActionResult New(int? Id)
+        {
+            var genres = _context.Genres.ToList();
+            var movie = _context.Movies.SingleOrDefault(m => m.Id == Id) ?? new Movie();
+
+            var viewModel = new MovieFormViewModel()
+            {
+                Movie = movie,
+                Genres = genres
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
+
+
+        // movies
+        public ActionResult Save(Movie movie)
+        {
+            if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now; 
+                _context.Movies.Add(movie);
+
+            }
+            else
+            {
+                var movieInDb = _context.Movies.SingleOrDefault(m => m.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.Genre = movie.Genre;
+                movieInDb.NumberInStock += movie.NumberInStock;
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Movies");
         }
     }
 }
