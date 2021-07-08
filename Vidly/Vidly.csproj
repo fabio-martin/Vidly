@@ -197,6 +197,14 @@
     <Compile Include="Migrations\202107081134320_ChangedReleaseDateAndDateAddedColumnToNullableInMoviesTable.designer.cs">
       <DependentUpon>202107081134320_ChangedReleaseDateAndDateAddedColumnToNullableInMoviesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107081958445_ChangedNameAndGenreColumnInMovieToBeRequired.cs" />
+    <Compile Include="Migrations\202107081958445_ChangedNameAndGenreColumnInMovieToBeRequired.designer.cs">
+      <DependentUpon>202107081958445_ChangedNameAndGenreColumnInMovieToBeRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107082019251_ChangedGenreIdColumnInMovieTable.cs" />
+    <Compile Include="Migrations\202107082019251_ChangedGenreIdColumnInMovieTable.designer.cs">
+      <DependentUpon>202107082019251_ChangedGenreIdColumnInMovieTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -322,6 +330,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107081134320_ChangedReleaseDateAndDateAddedColumnToNullableInMoviesTable.resx">
       <DependentUpon>202107081134320_ChangedReleaseDateAndDateAddedColumnToNullableInMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081958445_ChangedNameAndGenreColumnInMovieToBeRequired.resx">
+      <DependentUpon>202107081958445_ChangedNameAndGenreColumnInMovieToBeRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107082019251_ChangedGenreIdColumnInMovieTable.resx">
+      <DependentUpon>202107082019251_ChangedGenreIdColumnInMovieTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
