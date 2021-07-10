@@ -31,6 +31,16 @@ namespace Vidly.App_Start
                     .ForMember(
                         m => m.Id,
                         opt => opt.Ignore());
+
+                cfg
+                    .CreateMap<MembershipType, MembershipTypeDto>();
+                cfg
+                    .CreateMap<MembershipTypeDto, MembershipType>()
+                    .ForMember(
+                        m => m.Id,
+                        opt => opt.Ignore());
+
+
             });
 
             Mapper = config.CreateMapper();
