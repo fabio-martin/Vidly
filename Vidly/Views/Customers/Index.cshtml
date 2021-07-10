@@ -25,7 +25,7 @@
     <script>
         $(document).ready(function() {
 
-            $("#customers").DataTable({
+            var table = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc: ""
@@ -38,7 +38,7 @@
                         }
                     },
                     {
-                        data: "name"
+                        data: "membershipType.name"
                     },
                     {
                         data: "id",
@@ -76,7 +76,8 @@
                                         'Customer has been deleted.',
                                         'success'
                                     );
-                                    button.parents("tr").remove();
+                                    table.row(button.parents("tr")).remove().draw();
+
 
                                 }
                             });
