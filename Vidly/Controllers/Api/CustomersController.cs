@@ -5,7 +5,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using AutoMapper;
-using Microsoft.Ajax.Utilities;
 using Vidly.App_Start;
 using Vidly.Dtos;
 using Vidly.Models;
@@ -75,14 +74,7 @@ namespace Vidly.Controllers.Api
 
             
             mapper.Map(customerDto, customerInDb);
-
-            Console.WriteLine(customerInDb.Name); 
-
-            //customerInDb.Name = customerDto.Name;
-            //customerInDb.BirthDate = customerDto.BirthDate;
-            //customerInDb.IsSubscribedToNewsLetter = customerDto.IsSubscribedToNewsLetter;
-            //customerInDb.MembershipTypeId = customerDto.MembershipTypeId;
-
+            
             _context.SaveChanges();
 
         }
