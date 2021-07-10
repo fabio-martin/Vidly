@@ -13,11 +13,12 @@
 }
 else
 {
-    <table class="table table-bordered table-hover">
+    <table id="customers" class="table table-bordered table-hover">
         <thead>
         <tr>
             <th>Customer</th>
             <th>Membership Type</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -26,10 +27,63 @@ else
             <tr>
                 <td>@Html.ActionLink(@customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
                 <td>@customer.MembershipType.Name</td>
+                <td>
+                    <button data-customer-id="@customer.Id" class="btn-link js-delete">Delete</button>
+                </td>
             </tr>
           
         }
         </tbody>
     </table>
+}
+
+@section scripts
+{
+
+    <script>
+        $(document).ready(function() {
+
+            $("#customers").DataTable();
+
+            $("#customers").on("click", ".js-delete",
+                function(e) {
+
+                    e.preventDefault();
+
+                    var button = $(this);
+
+                    Swal.fire({
+                        title: 'Are you sure you want to delete this customer?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                                url: "/api/customers/" + button.attr("data-customer-id"),
+                                method: "DELETE",
+                                success: function() {
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Customer has been deleted.',
+                                        'success'
+                                    );
+                                    button.parents("tr").remove();
+
+                                }
+                            });
+
+                        }
+                    });
+                });
+        });
+
+
+    </script>
+
+
 }
 
