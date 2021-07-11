@@ -16,13 +16,13 @@ namespace Vidly.Controllers.Api
     public class CustomersController : ApiController
     {
 
-        private MyDbContext _context;
+        private ApplicationDbContext _context;
 
         private readonly IMapper mapper;
 
         public CustomersController()
         {
-            _context = new MyDbContext();
+            _context = new ApplicationDbContext();
             mapper = AutoMapperConfig.Mapper;
         }
 
