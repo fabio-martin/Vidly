@@ -14,16 +14,16 @@ namespace Vidly.Controllers
     public class CustomersController : Controller
     {
 
-        private MyDbContext _context;
+        private ApplicationDbContext _context;
 
         public CustomersController()
         {
-            _context = new MyDbContext();
+            _context = new ApplicationDbContext();
         }
 
         protected override void Dispose(bool disposing)
         {
-            _context.Dispose();
+            //_context.Dispose();
         }
 
         // GET: Movies

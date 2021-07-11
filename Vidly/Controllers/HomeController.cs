@@ -26,7 +26,5 @@ namespace Vidly.Controllers
 
             return View();
         }
-
-
     }
 }

@@ -15,14 +15,14 @@ namespace Vidly.Controllers.Api
 {
     public class MoviesController : ApiController
     {
-        private readonly MyDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         private readonly IMapper mapper;
 
 
         public MoviesController()
         {
-            _context = new MyDbContext();
+            _context = new ApplicationDbContext();
             mapper = AutoMapperConfig.Mapper;
         }
 
@@ -31,10 +31,12 @@ namespace Vidly.Controllers.Api
         public IHttpActionResult GetMovies()
         {
 
+
             var moviesDto = _context.Movies
                 .Include(m => m.Genre)
                 .ToList()
                 .Select(mapper.Map<MovieDto>);
+
 
             return Ok(moviesDto);
         }
