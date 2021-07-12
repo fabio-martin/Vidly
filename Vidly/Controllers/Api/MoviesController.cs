@@ -62,6 +62,8 @@ namespace Vidly.Controllers.Api
 
             var movie = mapper.Map<Movie>(movieDto);
 
+            movie.Genre = _context.Genres.Single(g => g.Id == movieDto.GenreId);
+
             _context.Movies.Add(movie);
             _context.SaveChanges();
 

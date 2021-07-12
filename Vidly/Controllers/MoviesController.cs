@@ -8,6 +8,8 @@ using Microsoft.Ajax.Utilities;
 using Vidly.Models;
 using Vidly.ViewModels;
 
+
+
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
@@ -28,12 +30,11 @@ namespace Vidly.Controllers
         // movies
         public ViewResult Index(int? pageIndex, string sortBy)
         {
-            var movies = _context.Movies
-                .Include(m => m.Genre)
-                .ToList();
 
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
 
-            return View(movies);
+            return View("ReadOnlyList");
         }
 
         // GET: Movies
@@ -81,7 +82,7 @@ namespace Vidly.Controllers
             return View(movie);
         }
 
-        // movies
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New(int? Id)
         {
             var genres = _context.Genres.ToList();

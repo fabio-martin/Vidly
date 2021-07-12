@@ -62,6 +62,9 @@ namespace Vidly.Controllers.Api
                 return BadRequest();
 
             var customer = mapper.Map<Customer>(customerDto);
+
+            customer.MembershipType = _context.MembershipTypes.Single(m => m.Id == customerDto.MembershipTypeId); ;
+
             _context.Customers.Add(customer);
             _context.SaveChanges();
 
