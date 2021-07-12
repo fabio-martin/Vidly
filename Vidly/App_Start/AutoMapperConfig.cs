@@ -36,6 +36,7 @@ namespace Vidly.App_Start
                         opt => opt.Ignore());
 
 
+
             });
 
             Mapper = config.CreateMapper();

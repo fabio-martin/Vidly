@@ -9,6 +9,7 @@ using System.Data.Entity;
 using Vidly.ViewModels;
 
 
+
 namespace Vidly.Controllers
 {
     public class CustomersController : Controller
@@ -23,12 +24,13 @@ namespace Vidly.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            //_context.Dispose();
+            _context.Dispose();
         }
 
         // GET: Movies
         public ViewResult Index()
         {
+
             return View();
         }
 
