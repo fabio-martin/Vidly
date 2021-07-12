@@ -204,6 +204,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Dtos\NewRentalDto.cs" />
     <Compile Include="Controllers\Api\RentalsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
@@ -237,6 +238,10 @@
     <Compile Include="Migrations\202107122115325_AddRentalTable.cs" />
     <Compile Include="Migrations\202107122115325_AddRentalTable.Designer.cs">
       <DependentUpon>202107122115325_AddRentalTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107122136110_AddNumberAvailableColumnToMovieTable.cs" />
+    <Compile Include="Migrations\202107122136110_AddNumberAvailableColumnToMovieTable.Designer.cs">
+      <DependentUpon>202107122136110_AddNumberAvailableColumnToMovieTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -556,6 +561,7 @@
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -588,6 +594,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107122115325_AddRentalTable.resx">
       <DependentUpon>202107122115325_AddRentalTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107122136110_AddNumberAvailableColumnToMovieTable.resx">
+      <DependentUpon>202107122136110_AddNumberAvailableColumnToMovieTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

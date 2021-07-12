@@ -6,5 +6,8 @@ namespace Vidly.Controllers.Api
     {
         public int CustomerId { get; set; }
         public List<int> MovieIds { get; set; }
+
+
+
     }
 }
