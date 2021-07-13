@@ -128,9 +128,13 @@ namespace Vidly.Controllers
 
             }
 
+            var genre = _context.Genres.SingleOrDefault(g => g.Id == movie.GenreId);
+
             if (movie.Id == 0)
             {
-                movie.DateAdded = DateTime.Now; 
+                movie.DateAdded = DateTime.Now;
+                movie.Genre = genre;
+                movie.NumberAvailable = movie.NumberInStock;
                 _context.Movies.Add(movie);
 
             }
@@ -140,7 +144,9 @@ namespace Vidly.Controllers
                 movieInDb.Name = movie.Name;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.GenreId = movie.GenreId;
-                movieInDb.NumberInStock += movie.NumberInStock;
+                movie.Genre = genre;
+                movieInDb.NumberInStock = movie.NumberInStock;
+                movieInDb.NumberAvailable = movie.NumberInStock;
             }
 
             _context.SaveChanges();

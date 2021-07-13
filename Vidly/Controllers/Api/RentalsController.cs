@@ -25,7 +25,7 @@ namespace Vidly.Controllers.Api
 
 
         [HttpPost]
-        public IHttpActionResult CreateNewRental(NewRentalDto newRental)
+        public IHttpActionResult CreateRentals(NewRentalDto newRental)
         {
             if (newRental.MovieIds.Count == 0)
                 return BadRequest("No Movie Ids have been given.");
@@ -59,6 +59,7 @@ namespace Vidly.Controllers.Api
                 _context.Rentals.Add(rental);
             }
 
+            _context.SaveChanges();
 
             return Ok();
         }
